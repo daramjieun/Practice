@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout2- flex, 반응형</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #E8F5E9;
+        }
+
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        #header {
+            height: 100px;
+            background-color: aliceblue;
+        }
+
+        #nav {
+            height: 100px;
+            background-color: seashell;
+        }
+
+        #main {
+            display: flex;
+        }
+
+        #aside {
+            width: 30%;
+            height: 780px;
+            background-color: beige;
+        }
+
+        #section {
+            width: 40%;
+            height: 780px;
+            background-color: blanchedalmond;
+        }
+
+        #article {
+            width: 30%;
+            height: 780px;
+            background-color: bisque;
+        }
+
+        #footer {
+            height: 100px;
+            background-color: aliceblue;
+        }
+
+        @media screen and (max-width: 1300px) {
+            #wrap {
+                width: 90%;
+            }
+        }
+        /* 크기만 바꿔주면 된다. */
+        @media screen and (max-width: 768px) {
+            #wrap {
+                width: 100%;
+            }
+            #main {
+                flex-wrap: wrap;
+            }
+            #aside {
+                width: 30%;
+                height: 630px;
+            }
+            #section {
+                width: 70%;
+                height: 630px;
+            }
+            #article {
+                width: 100%;
+                height: 150px;
+            }
+        } 
+        /* 한 줄로 바꿔주면 되니까 너비 100%로 */
+        @media screen and (max-width: 480px) {
+            #aside {
+                width: 100%;
+                height: 200px;
+            }
+            #section {
+                width: 100%;
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">  
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">
+            <aside id="aside"></aside>
+            <section id="section"></section>
+            <article id="article"></article>
+        </main>    
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>

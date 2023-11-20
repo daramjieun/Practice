@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout2- grid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #E8F5E9;
+        }
+
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        #header {
+            height: 100px;
+            background-color: aliceblue;
+        }
+
+        #nav {
+            height: 100px;
+            background-color: seashell;
+        }
+
+        #main {
+            display: grid;
+            grid-template-columns: 30% 40% 30%;
+            grid-template-rows: 780px;
+        }
+
+        #aside {
+            background-color: beige;
+        }
+
+        #section {
+            background-color: blanchedalmond;
+        }
+
+        #article {
+            background-color: bisque;
+        }
+
+        #footer {
+            height: 100px;
+            background-color: aliceblue;
+        }
+
+        @media screen and (max-width: 1300px) {
+        }
+        /* 크기만 바꿔주면 된다. */
+        @media screen and (max-width: 768px) {
+        } 
+        /* 한 줄로 바꿔주면 되니까 너비 100%로 */
+        @media screen and (max-width: 480px) {
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">  
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">
+            <aside id="aside"></aside>
+            <section id="section"></section>
+            <article id="article"></article>
+        </main>    
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>
