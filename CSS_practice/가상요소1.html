@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형광펜 효과</title>
+    <style>
+        /* 복수로 적용 가능하니 만들어 놓고 여기저기 사용가능 */
+        body {
+            background-color: beige;
+        }
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 40px;
+            font-weight: lighter;
+            cursor: default;
+        }
+        .hightlight {
+            /* 간격없이 영역을 잡을 수 있는 테이블 속성 선언 */
+            display: inline-table;
+            /* /* 위치를 지정하는 요소의 기준값 */
+            position: relative;
+            /* 안쪽 콘텐츠가 요소의 크기보다 크면 안보이게 처리 */
+            overflow: hidden;
+        }
+        .hightlight span {
+            /* 포지션 속성의 기준을 정하는 값 */
+            position: relative;
+            /* 포지션 속성을 갖고 있는 요소의 우선순위 */
+            z-index: 2;
+        }
+        .hightlight::before {
+            content: '';
+            /* 화면에 보여지는 속성 */
+            display: block;
+            /* 부모요소에 가득 차게 */
+            width: 100%;
+            height: 50%;
+            /* 배경색 투명도 있는 노란색*/
+            background: rgba(255, 200, 0, 0.8);
+            /* 레이어처럼 위로 띄워지는 속성 */
+            position: absolute;
+            bottom: 0;
+            /* 포지션 왼쪽 간격 100%로 
+            부모요소에서 바깥으로 빠지는 값 */
+            left: -100%;
+            /* 자연스런 애니메이션 효과 (부드럽게)*/
+            transition: all .35s;
+            /* z-index를 설정을 하면  짙은 색을 배경으로 주어도
+            텍스트 밑에 칠해진다. */
+            z-index: 1;
+        }
+
+        /* content 위에 마우스 올라가면 before 위치값 변화 */
+        .content:hover .hightlight::before {
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        💜 <span class="hightlight"><span>행복하세요!</span></span> 💜<br/>
+        <span class="hightlight"><span>YES~~~!</span></span>😝
+    </div>
+</body>
+</html>
